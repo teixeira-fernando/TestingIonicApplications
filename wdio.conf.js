@@ -19,6 +19,14 @@ exports.config = {
         'appium:autoWebview': true,
         'appium:autoGrantPermissions': true,
         'appium:chromedriverExecutableDir': join(process.cwd(), './chromedrivers')
+    },
+    {
+        platformName: 'iOS',
+        platformVersion: '12.1',
+        'appium:deviceName': 'iPhone X', // this will launch the iPhone 8 emulator
+        'appium:app': join(process.cwd(), './AppiumTest/platforms/ios/build/emulator/HelloCordova.app'),
+        'appium:autoWebview': true,
+        'appium:autoGrantPermissions': true
     }],
     logLevel: 'info',
     bail: 0,

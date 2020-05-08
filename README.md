@@ -13,11 +13,12 @@ PATH=$JAVA_HOME/bin:$PATH
 export PATH
 
 
-# Commands to be execuuted
+# Commands to be executed
 
 * Clone this repository
 * > npm install
-* > cordova build android
+* Recommended: To verify if appium and all the environment variables are configured as expected, install the dependency appium-doctor and run: > appium-doctor
+* Inside the folder AppiumTest, execute: > cordova build android && && cordova build ios
 * Check if the chrome driver is compatible with the chrome browser that your device has
 * > npm test
 
