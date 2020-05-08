@@ -17,9 +17,14 @@ export PATH
 
 * Clone this repository
 * > npm install
-* Recommended: To verify if appium and all the environment variables are configured as expected, install the dependency appium-doctor and run: > appium-doctor
-* Inside the folder AppiumTest, execute: > cordova build android && && cordova build ios
-* Check if the chrome driver is compatible with the chrome browser that your device has
+* Recommended: To verify if appium and all the environment variables are configured as expected, install the dependency appium-doctor and run: 
+    > appium-doctor
+* Inside the folder AppiumTest, execute the following commands: 
+    * > cordova platform add android 
+    * > cordova build android
+    * > cordova platform add ios 
+    * > cordova build ios
+* Check if the chrome driver is compatible with the chrome browser that your device have
 * > npm test
 
 
