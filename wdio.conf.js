@@ -2,9 +2,9 @@ let {join} = require('path')
 exports.config = {
     host: 'localhost',
     port: 4723,
-    path: "/wd/hub",
+    path: '/wd/hub',
     specs: [
-        './test/specs/**/*.js'
+        './AppiumTest/test/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -14,8 +14,11 @@ exports.config = {
     capabilities: [{
         platformName: 'Android',
         'appium:automationName': 'UiAutomator2',
-        'appium:deviceName': 'Pixel 2',
-        'appium:app': join(process.cwd(),'./ApiDemos-debug.apk')
+        'appium:deviceName': 'Pixel 3',
+        'appium:app': join(process.cwd(), './AppiumTest/platforms/android/app/build/outputs/apk/debug/app-debug.apk'),
+        'appium:autoWebview': true,
+        'appium:autoGrantPermissions': true,
+        'appium:chromedriverExecutableDir': join(process.cwd(), './chromedrivers')
     }],
     logLevel: 'info',
     bail: 0,
@@ -26,8 +29,22 @@ exports.config = {
     connectionRetryTimeout: 90000,
     //
     // Default request retries count
-    connectionRetryCount: 3,
-    services: ['appium'],
+    connectionRetryCount: 2,
+    services: [
+        [
+            'appium',
+            {
+                // For options see
+                // https://github.com/webdriverio/webdriverio/tree/master/packages/wdio-appium-service
+                args: {
+                    basePath: '/wd/hub'
+                    // For arguments see
+                    // https://github.com/webdriverio/webdriverio/tree/master/packages/wdio-appium-service
+                },
+                command: 'appium',
+            },
+        ],
+    ],
     
     framework: 'mocha',
     //

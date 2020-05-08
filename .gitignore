@@ -5,3 +5,5 @@ node_modules
 /.idea/TAU_WebDriverIOAndAppium.iml
 /.idea/vcs.xml
 /package-lock.json
+AppiumTest/platforms/
+AppiumTest/node_modules/
